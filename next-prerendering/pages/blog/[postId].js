@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
-function postDetails({ post }) {
+
+function PostDetails({ post }) {
   const router = useRouter();
   if (router.isFallback) {
     // when fallback is true load this then load the generated page
@@ -18,7 +19,7 @@ function postDetails({ post }) {
   );
 }
 
-export default postDetails;
+export default PostDetails;
 
 export async function getStaticPaths() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
