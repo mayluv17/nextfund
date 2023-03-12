@@ -18,7 +18,10 @@ function ArticleListByCategory({ category, articles }) {
 export default ArticleListByCategory;
 
 export async function getServerSideProps(context) {
-  const { params } = context;
+  const { params, req, result, query } = context;
+  // console.log(req.headers.cookie) // console curent cookie
+  //result.setHeader('set-cookie,[name=vishwas]') //set coookie when data returned
+
   const { category } = params;
   const res = await fetch(`http://localhost:4000/news?category=${category}`);
   const data = await res.json();

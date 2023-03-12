@@ -7,7 +7,7 @@ function NewsList({ articles }) {
 
       {articles.map((article) => {
         return (
-          <Link href={`/news/${article.category}`} passHref>
+          <Link key={article.key} href={`/news/${article.category}`} passHref>
             <div>
               <h6>
                 {article.id} {article.title} | {article.category}
